@@ -1,0 +1,9 @@
+com/rioiam/iiq/tasks/IIQTaskExecutorTest.class
+com/rioiam/iiq/fixtures/TestConfigurations.class
+com/rioiam/iiq/fixtures/TestIdentities.class
+com/rioiam/iiq/identity/IdentityServiceTest.class
+com/rioiam/iiq/identity/CreateActiveIdentityTest.class
+com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateWithExistingUserTest.class
+com/rioiam/iiq/base/BaseIIQTest.class
+com/rioiam/iiq/base/BaseWorkflowTest.class
+com/rioiam/iiq/workflow/activatedeactivate/ActivationTests.class

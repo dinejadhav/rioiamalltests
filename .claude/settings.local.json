@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jar -tf:*)",
+      "Read(//Users/dineshjadhav/Sailpoint/RioIAM_repo/RioIAM/config/Workflow/Core/ActivateDeactivateIdentity/**)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(mvn test-compile:*)",
+      "Bash(mvn test:*)",
+      "Bash(cat:*)",
+      "Bash(javap:*)",
+      "Read(//Users/dineshjadhav/Sailpoint/RioIAM_repo/**)",
+      "Bash(mvn clean test-compile:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
