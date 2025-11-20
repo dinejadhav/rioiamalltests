@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity correlated="true" created="1763030803884" id="c6126eb69a771b87819a7cd325ac132b" lastRefresh="1763586299671" modified="1763586299675" name="944D25E7F42C7B46" significantModified="1763033402765">
+  <Attributes>
+    <Map>
+      <entry key="displayName" value="Bob1 Testonoci11, Vodafone (External)"/>
+      <entry key="email" value="bob1.testonoci11@vodafone-itc.com"/>
+      <entry key="firstname" value="Bob1"/>
+      <entry key="inactive" value="true"/>
+      <entry key="lastname" value="Testonoci11"/>
+      <entry key="vf_id_City" value="Alandi"/>
+      <entry key="vf_id_building" value="Abteilungsleiterr Service Management"/>
+      <entry key="vf_id_company" value="Wipro"/>
+      <entry key="vf_id_companylegalname" value="Vodafone Germany"/>
+      <entry key="vf_id_companyuniqueid" value="2"/>
+      <entry key="vf_id_cost_center" value="TRUE"/>
+      <entry key="vf_id_country" value="Germany"/>
+      <entry key="vf_id_country_iso_code" value="DE"/>
+      <entry key="vf_id_data_source" value="VFD2_iPlanet"/>
+      <entry key="vf_id_department" value="TRUE DVT20"/>
+      <entry key="vf_id_department_abbreviation" value="TRUE"/>
+      <entry key="vf_id_employee_group" value="Non-Employee"/>
+      <entry key="vf_id_employee_subgroup" value="Contractor"/>
+      <entry key="vf_id_end_date" value="12/9/2025 0:0:0 AM CET"/>
+      <entry key="vf_id_function" value="Active"/>
+      <entry key="vf_id_hire_date" value="20251111000000Z"/>
+      <entry key="vf_id_identity_type" value="Contractor"/>
+      <entry key="vf_id_job_title" value="DE04108600"/>
+      <entry key="vf_id_legal_entity_id" value="DE04"/>
+      <entry key="vf_id_middle_name" value="AD"/>
+      <entry key="vf_id_objectGUID" value="CB29C270E14FAB45B1DD33CEB27813B4"/>
+      <entry key="vf_id_opcouid" value="921432690"/>
+      <entry key="vf_id_organization_name" value="Vodafone Germany"/>
+      <entry key="vf_id_personnelareacode" value="Hamacher"/>
+      <entry key="vf_id_personnelsubareacode" value="2"/>
+      <entry key="vf_id_preferred_language" value="de"/>
+      <entry key="vf_id_start_date" value="11/11/2025 0:0:0 AM CET"/>
+      <entry key="vf_id_status" value="Inactive"/>
+      <entry key="vf_id_termination_date" value="20251209000000Z"/>
+      <entry key="vf_id_usr_create" value="11/11/2025 7:38:27 AM CET"/>
+      <entry key="vf_id_usr_update" value="11/11/2025 8:25:8 AM CET"/>
+      <entry key="vf_id_vfuid_short" value="4e09dcc"/>
+      <entry key="vf_id_wiam_manager" value="ker3.mod3@vodafone-itc.com"/>
+    </Map>
+  </Attributes>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="inactive" source="WIAM:AppRule: VF-Core-IdentityMapping-Inactive WIAM$VF-Core-IdentityMapping-Inactive"/>
+    <AttributeMetaData attribute="displayName" source="WIAM:USR_DISPLAY_NAME"/>
+    <AttributeMetaData attribute="vf_id_identity_type" source="WIAM:USR_EMP_TYPE"/>
+    <AttributeMetaData attribute="vf_id_middle_name" source="WIAM:USR_MIDDLE_NAME"/>
+    <AttributeMetaData attribute="vf_id_job_title" source="WIAM:USR_UDF_VF_JOBTITLE"/>
+    <AttributeMetaData attribute="vf_id_vfuid_short" source="WIAM:USR_UDF_VF_VFUIDS"/>
+    <AttributeMetaData attribute="vf_id_country" source="WIAM:USR_COUNTRY"/>
+    <AttributeMetaData attribute="vf_id_start_date" source="WIAM:USR_START_DATE"/>
+    <AttributeMetaData attribute="vf_id_end_date" source="WIAM:USR_END_DATE"/>
+    <AttributeMetaData attribute="vf_id_cost_center" source="WIAM:USR_UDF_VF_COSTCENTRE"/>
+    <AttributeMetaData attribute="vf_id_department" source="WIAM:USR_UDF_VF_DEPARTMENT"/>
+    <AttributeMetaData attribute="vf_id_department_abbreviation" source="WIAM:USR_UDF_VF_DEPTABBREVIATION"/>
+    <AttributeMetaData attribute="vf_id_function" source="WIAM:USR_UDF_VF_FUNCTION"/>
+    <AttributeMetaData attribute="vf_id_hire_date" source="WIAM:USR_UDF_VF_HIREDATE"/>
+    <AttributeMetaData attribute="vf_id_termination_date" source="WIAM:USR_UDF_VF_TERMINATIONDATE"/>
+    <AttributeMetaData attribute="vf_id_preferred_language" source="WIAM:USR_UDF_VF_PREFERREDLANGUAGE"/>
+    <AttributeMetaData attribute="vf_id_organization_name" source="WIAM:ACT_NAME"/>
+    <AttributeMetaData attribute="vf_id_country_iso_code" source="WIAM:USR_UDF_VF_COUNTRYCODE"/>
+    <AttributeMetaData attribute="vf_id_companyuniqueid" source="WIAM:USR_UDF_VF_COMPANYUNIQUEID"/>
+    <AttributeMetaData attribute="vf_id_opcouid" source="WIAM:USR_UDF_VF_OPCOUID"/>
+    <AttributeMetaData attribute="vf_id_employee_group" source="WIAM:AppRule: VF-Core-IdentityMapping-EmployeeGroup WIAM$VF-Core-IdentityMapping-EmployeeGroup"/>
+    <AttributeMetaData attribute="vf_id_employee_subgroup" source="WIAM:AppRule: VF-Core-IdentityMapping-EmployeeSubGroup WIAM$VF-Core-IdentityMapping-EmployeeSubGroup"/>
+    <AttributeMetaData attribute="vf_id_company" source="WIAM:USR_UDF_VF_EXTCOMPANYNAME"/>
+    <AttributeMetaData attribute="vf_id_objectGUID" source="WIAM:UD_TPS_OBJECT_GUID"/>
+    <AttributeMetaData attribute="vf_id_data_source" source="WIAM:USR_UDF_VF_DATASOURCE"/>
+    <AttributeMetaData attribute="vf_id_companylegalname" source="WIAM:USR_UDF_VF_COMPANYLEGALNAME"/>
+    <AttributeMetaData attribute="vf_id_usr_update" source="WIAM:USR_UPDATE"/>
+    <AttributeMetaData attribute="vf_id_usr_create" source="WIAM:USR_CREATE"/>
+    <AttributeMetaData attribute="vf_id_building" source="WIAM:USR_UDF_VF_BUILDING"/>
+    <AttributeMetaData attribute="vf_id_wiam_manager" source="WIAM:USR_UDF_VF_REPORTINGTO"/>
+    <AttributeMetaData attribute="vf_id_City" source="WIAM:USR_UDF_VF_CITY"/>
+    <AttributeMetaData attribute="lastname" source="WIAM:USR_LAST_NAME"/>
+    <AttributeMetaData attribute="vf_id_status" source="WIAM:AppRule: VF-Core-IdentityMapping-Status WIAM$VF-Core-IdentityMapping-Status"/>
+    <AttributeMetaData attribute="vf_id_legal_entity_id" source="WIAM:USR_UDF_VF_LEGALENTITYID"/>
+    <AttributeMetaData attribute="vf_id_personnelareacode" source="WIAM:USR_UDF_VF_PERSONNELAREACODE"/>
+    <AttributeMetaData attribute="vf_id_personnelsubareacode" source="WIAM:USR_UDF_VF_PERSONNELSUBAREACOD"/>
+    <AttributeMetaData attribute="email" source="WIAM:USR_EMAIL"/>
+    <AttributeMetaData attribute="firstname" source="WIAM:USR_FIRST_NAME"/>
+    <AttributeMetaData attribute="manager" source="WIAM:AppRule: VF-Core-IdentityMapping-Manager WIAM$VF-Core-IdentityMapping-Manager"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" id="c6126eb68b6f1918818b7156e2c21897" name="A683DDECC0289C29"/>
+  </Manager>
+  <Links>
+    <Link created="1763030803884" displayName="944D25E7F42C7B46" id="c6126eb69a771b87819a7cd325ac132c" lastRefresh="1763030803884" modified="1763030803886" identity="944D25E7F42C7B46" significantModified="1763030803886">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" id="c6126eb6870e1b7481870e9bcbd6001b" name="WIAM"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ACT_NAME" value="Vodafone Germany"/>
+          <entry key="IIQDisabled" value="false"/>
+          <entry key="UD_TPS_OBJECT_GUID" value="CB29C270E14FAB45B1DD33CEB27813B4"/>
+          <entry key="USR_COUNTRY" value="Germany"/>
+          <entry key="USR_CREATE" value="11/11/2025 7:38:27 AM CET"/>
+          <entry key="USR_DISPLAY_NAME" value="Bob1 Testonoci11, Vodafone (External)"/>
+          <entry key="USR_EMAIL" value="bob1.testonoci11@vodafone-itc.com"/>
+          <entry key="USR_EMP_TYPE" value="Contractor"/>
+          <entry key="USR_END_DATE" value="12/9/2025 0:0:0 AM CET"/>
+          <entry key="USR_FIRST_NAME" value="Bob1"/>
+          <entry key="USR_LAST_NAME" value="Testonoci11"/>
+          <entry key="USR_LOCKED" value="0"/>
+          <entry key="USR_LOGIN" value="944D25E7F42C7B46"/>
+          <entry key="USR_MANAGER_KEY" value="725393"/>
+          <entry key="USR_MIDDLE_NAME" value="AD"/>
+          <entry key="USR_START_DATE" value="11/11/2025 0:0:0 AM CET"/>
+          <entry key="USR_STATUS" value="Active"/>
+          <entry key="USR_TELEPHONE_NUMBER" value="+54 534435345"/>
+          <entry key="USR_UDF_VF_BUILDING" value="Abteilungsleiterr Service Management"/>
+          <entry key="USR_UDF_VF_CITY" value="Alandi"/>
+          <entry key="USR_UDF_VF_COMPANYLEGALNAME" value="Vodafone Germany"/>
+          <entry key="USR_UDF_VF_COMPANYUNIQUEID" value="2"/>
+          <entry key="USR_UDF_VF_COSTCENTRE" value="TRUE"/>
+          <entry key="USR_UDF_VF_COUNTRYCODE" value="DE"/>
+          <entry key="USR_UDF_VF_DATASOURCE" value="VFD2_iPlanet"/>
+          <entry key="USR_UDF_VF_DEPARTMENT" value="TRUE DVT20"/>
+          <entry key="USR_UDF_VF_DEPTABBREVIATION" value="TRUE"/>
+          <entry key="USR_UDF_VF_EMPSUBGROUPCODE" value="0E"/>
+          <entry key="USR_UDF_VF_EXTCOMPANYNAME" value="Wipro"/>
+          <entry key="USR_UDF_VF_FUNCTION" value="Active"/>
+          <entry key="USR_UDF_VF_HIREDATE" value="20251111000000Z"/>
+          <entry key="USR_UDF_VF_JOBTITLE" value="DE04108600"/>
+          <entry key="USR_UDF_VF_LEGALENTITYID" value="DE04"/>
+          <entry key="USR_UDF_VF_OPCOUID" value="921432690"/>
+          <entry key="USR_UDF_VF_PERSONNELAREACODE" value="Hamacher"/>
+          <entry key="USR_UDF_VF_PERSONNELSUBAREACOD" value="2"/>
+          <entry key="USR_UDF_VF_PREFERREDLANGUAGE" value="de"/>
+          <entry key="USR_UDF_VF_REPORTINGTO" value="ker3.mod3@vodafone-itc.com"/>
+          <entry key="USR_UDF_VF_TERMINATIONDATE" value="20251209000000Z"/>
+          <entry key="USR_UDF_VF_VFUIDS" value="4e09dcc"/>
+          <entry key="USR_UPDATE" value="11/11/2025 8:25:8 AM CET"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>
