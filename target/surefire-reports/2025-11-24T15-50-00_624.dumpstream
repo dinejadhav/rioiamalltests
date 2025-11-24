@@ -1,0 +1,12 @@
+# Created at 2025-11-24T15:50:03.213
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+
+# Created at 2025-11-24T15:50:03.213
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.ehcache.impl.internal.concurrent.ThreadLocalRandomUtil (file:/Users/dineshjadhav/.m2/repository/org/ehcache/ehcache/3.10.8/ehcache-3.10.8.jar)
+
+# Created at 2025-11-24T15:50:03.213
+WARNING: Please consider reporting this to the maintainers of class org.ehcache.impl.internal.concurrent.ThreadLocalRandomUtil
+
+# Created at 2025-11-24T15:50:03.213
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+

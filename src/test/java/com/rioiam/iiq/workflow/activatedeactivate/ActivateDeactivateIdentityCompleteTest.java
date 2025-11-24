@@ -67,9 +67,7 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
      * - Replace the example names below with your actual user IDs
      */
     private static final List<String> INACTIVE_USERS_TO_ACTIVATE = Arrays.asList(
-        "user1",    // ← Replace with your actual user ID
-        "user2",    // ← Replace with your actual user ID
-        "user3"     // ← Replace with your actual user ID
+        "944D25E7F42C7B46"    // Bob1 Testonoci11 - Created from XML
         // Add as many users as you need...
     );
 
@@ -123,8 +121,8 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         Map<String, Object> initialVariables = new HashMap<>();
         initialVariables.put("launcher", LAUNCHER_USER);
         initialVariables.put("identityName", LAUNCHER_USER);
-        initialVariables.put("userLocale", Locale.ENGLISH);
-        initialVariables.put("clientTimeZone", TimeZone.getDefault());
+        initialVariables.put("userLocale", Locale.ENGLISH);  // Required by workflow
+        initialVariables.put("clientTimeZone", TimeZone.getDefault());  // Required by workflow
 
         String workflowCaseId = workflowExecutor.launchWorkflow(WORKFLOW_NAME, LAUNCHER_USER, initialVariables);
         assertNotNull("Workflow should be launched", workflowCaseId);
@@ -132,6 +130,18 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
 
         // Step 2: Complete Request Initiate Form
         logger.info("Step 2: Completing Request Initiate form...");
+        logger.info("DEBUG: Searching for WorkItem with workflowCaseId: {}", workflowCaseId);
+
+        // Debug: Check all pending work items immediately
+        logger.info("DEBUG: Checking pending work items before wait...");
+        List<WorkItem> allItems = workItemHandler.getWorkItemsForWorkflow(workflowCaseId);
+        logger.info("DEBUG: Found {} work items for workflow case '{}'", allItems != null ? allItems.size() : 0, workflowCaseId);
+        if (allItems != null && !allItems.isEmpty()) {
+            for (WorkItem item : allItems) {
+                logger.info("DEBUG: - WorkItem: type={}, owner={}, state={}", item.getType(), item.getOwner(), item.getState());
+            }
+        }
+
         WorkItem initiateForm = workItemHandler.waitForWorkItem(workflowCaseId, WorkItem.Type.Form, 30);
         assertNotNull("Request Initiate form should appear", initiateForm);
         logger.info("✓ Request Initiate form found: {}", initiateForm.getId());
@@ -241,8 +251,8 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         Map<String, Object> initialVariables = new HashMap<>();
         initialVariables.put("launcher", LAUNCHER_USER);
         initialVariables.put("identityName", LAUNCHER_USER);
-        initialVariables.put("userLocale", Locale.ENGLISH);
-        initialVariables.put("clientTimeZone", TimeZone.getDefault());
+        initialVariables.put("userLocale", Locale.ENGLISH);  // Required by workflow
+        initialVariables.put("clientTimeZone", TimeZone.getDefault());  // Required by workflow
 
         String workflowCaseId = workflowExecutor.launchWorkflow(WORKFLOW_NAME, LAUNCHER_USER, initialVariables);
         assertNotNull("Workflow should be launched", workflowCaseId);
@@ -506,8 +516,10 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         Map<String, Object> initialVariables = new HashMap<>();
         initialVariables.put("launcher", LAUNCHER_USER);
         initialVariables.put("identityName", LAUNCHER_USER);
+        initialVariables.put("userLocale", Locale.ENGLISH);  // Required by workflow
+        initialVariables.put("clientTimeZone", TimeZone.getDefault());  // Required by workflow
         initialVariables.put("userLocale", Locale.ENGLISH);
-        initialVariables.put("clientTimeZone", TimeZone.getDefault());
+        initialVariables.put("clientTimeZone", TimeZone.getDefault().getID());  // Use timezone ID string instead of TimeZone object
 
         String workflowCaseId = workflowExecutor.launchWorkflow(WORKFLOW_NAME, LAUNCHER_USER, initialVariables);
         assertNotNull("Workflow should be launched", workflowCaseId);

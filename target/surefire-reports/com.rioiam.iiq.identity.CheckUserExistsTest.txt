@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.rioiam.iiq.identity.CheckUserExistsTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.001 s <<< FAILURE! - in com.rioiam.iiq.identity.CheckUserExistsTest
-testCheckDineshJadhavUser(com.rioiam.iiq.identity.CheckUserExistsTest)  Time elapsed: 0.024 s  <<< FAILURE!
-java.lang.AssertionError: dinesh.jadhav1 user must exist in IIQ
-	at com.rioiam.iiq.identity.CheckUserExistsTest.testCheckDineshJadhavUser(CheckUserExistsTest.java:41)
-

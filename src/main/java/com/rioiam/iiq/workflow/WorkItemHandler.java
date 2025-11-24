@@ -35,7 +35,7 @@ public class WorkItemHandler {
     /**
      * Get all open work items for a specific workflow case.
      *
-     * @param workflowCaseId ID of the workflow case
+     * @param workflowCaseId ID or name of the workflow case
      * @return List of open work items for the workflow
      */
     public List<WorkItem> getWorkItemsForWorkflow(String workflowCaseId) {
@@ -45,8 +45,12 @@ public class WorkItemHandler {
 
         try {
             QueryOptions qo = new QueryOptions();
+            // Try both workflowCase.name and workflowCase.id since ID may be null in some cases
             Filter filter = Filter.and(
-                Filter.eq("workflowCase.id", workflowCaseId),
+                Filter.or(
+                    Filter.eq("workflowCase.name", workflowCaseId),
+                    Filter.eq("workflowCase.id", workflowCaseId)
+                ),
                 Filter.eq("state", WorkItem.State.Pending)
             );
             qo.addFilter(filter);

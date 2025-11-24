@@ -2,6 +2,8 @@
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/activatedeactivate/ActivationTests.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateWithExistingUserTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/tasks/IIQTaskExecutorTest.java
+/Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CreateBobTestUserTest.java
+/Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CheckUserCapabilitiesTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateIdentityCompleteTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/base/BaseWorkflowTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CheckUserExistsTest.java
@@ -11,3 +13,4 @@
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CreateActiveIdentityTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/IdentityServiceTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/fixtures/TestConfigurations.java
+/Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/AssignCapabilitiesToDineshTest.java

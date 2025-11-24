@@ -1,4 +1,17 @@
+com/rioiam/iiq/identity/CheckUserCapabilitiesTest.class
+com/rioiam/iiq/fixtures/TestConfigurations.class
+com/rioiam/iiq/fixtures/TestIdentities.class
+com/rioiam/iiq/identity/IdentityServiceTest.class
+com/rioiam/iiq/workflow/CheckWorkflowStatusTest.class
+com/rioiam/iiq/base/BaseIIQTest.class
 com/rioiam/iiq/identity/CheckUserExistsTest.class
+com/rioiam/iiq/identity/AssignCapabilitiesToDineshTest.class
+com/rioiam/iiq/base/BaseWorkflowTest.class
+com/rioiam/iiq/workflow/activatedeactivate/ActivationTests.class
 com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateIdentityCompleteTest.class
 com/rioiam/iiq/identity/CreateDineshJadhavUserTest.class
+com/rioiam/iiq/tasks/IIQTaskExecutorTest.class
+com/rioiam/iiq/identity/CreateActiveIdentityTest.class
+com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateWithExistingUserTest.class
+com/rioiam/iiq/identity/CreateBobTestUserTest.class
 com/rioiam/iiq/identity/CreateInactiveUserForTest.class

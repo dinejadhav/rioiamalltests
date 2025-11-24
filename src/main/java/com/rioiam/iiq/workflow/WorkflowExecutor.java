@@ -79,10 +79,12 @@ public class WorkflowExecutor {
 
                 if (wfCase != null) {
                     logger.info("✓ Workflow launched successfully");
-                    logger.info("  Workflow Case ID: {}", wfCase.getId());
                     logger.info("  Workflow Case Name: {}", wfCase.getName());
                     logger.info("  Initial Status: {}", wfCase.getCompletionStatus());
-                    return wfCase.getId();
+
+                    // Return the workflow case name instead of ID since ID may not be populated yet
+                    // The workflow case name is unique and can be used to track the workflow
+                    return wfCase.getName();
                 } else {
                     logger.error("✗ Workflow launch returned WorkflowCase = null");
                     logger.error("  Launch object exists but WorkflowCase is null");
