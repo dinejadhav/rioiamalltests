@@ -40,8 +40,21 @@ public class WorkflowExecutor {
      * @return Workflow case ID if successful, null if failed
      */
     public String launchWorkflow(String workflowName, Map<String, Object> variables) {
+        return launchWorkflow(workflowName, "spadmin", variables);
+    }
+
+    /**
+     * Launch a workflow with the given name, launcher, and input variables.
+     *
+     * @param workflowName Name of the workflow to launch
+     * @param launcher Identity name who launches the workflow (e.g., "dinesh.jadhav1", "spadmin")
+     * @param variables Input variables for the workflow
+     * @return Workflow case ID if successful, null if failed
+     */
+    public String launchWorkflow(String workflowName, String launcher, Map<String, Object> variables) {
         logger.info("========================================");
         logger.info("Launching workflow: {}", workflowName);
+        logger.info("Launcher: {}", launcher);
         logger.info("========================================");
 
         SailPointContext context = remoteContext.getContext();
@@ -59,8 +72,6 @@ public class WorkflowExecutor {
             }
 
             // Launch the workflow - use 3-parameter version: launch(workflowName, launcher, variables)
-            // launcher can be the identity name or "spadmin"
-            String launcher = "spadmin";
             WorkflowLaunch launch = workflower.launch(workflowName, launcher, variables);
 
             if (launch != null) {

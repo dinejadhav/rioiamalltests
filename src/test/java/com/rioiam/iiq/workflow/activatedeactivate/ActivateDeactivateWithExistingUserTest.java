@@ -36,13 +36,13 @@ public class ActivateDeactivateWithExistingUserTest extends BaseWorkflowTest {
      * SET THIS: Identity name to test activation workflow
      * Example: "test_user_activation_1761823363978"
      */
-    private static final String INACTIVE_USER_TO_ACTIVATE = "test_user_activation_1761823363978";
+    private static final String INACTIVE_USER_TO_ACTIVATE = "test_user_activation_1763557890145";
 
     /**
      * SET THIS: Identity name to test deactivation workflow
      * Example: "active_user_1761823363978"
      */
-    private static final String ACTIVE_USER_TO_DEACTIVATE = "active_user_1761823363978";
+    private static final String ACTIVE_USER_TO_DEACTIVATE = "active_user_1763557890195";
 
     // ==========================================================
 

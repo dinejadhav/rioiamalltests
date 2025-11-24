@@ -10,7 +10,10 @@
       "Bash(cat:*)",
       "Bash(javap:*)",
       "Read(//Users/dineshjadhav/Sailpoint/RioIAM_repo/**)",
-      "Bash(mvn clean test-compile:*)"
+      "Bash(mvn clean test-compile:*)",
+      "Bash(perl -i -pe:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
