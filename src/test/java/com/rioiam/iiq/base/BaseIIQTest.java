@@ -31,7 +31,8 @@ import sailpoint.api.SailPointContext;
     com.rioiam.iiq.identity.IdentityService.class,
     com.rioiam.iiq.identity.IdentityValidator.class,
     com.rioiam.iiq.workflow.WorkflowExecutor.class,
-    com.rioiam.iiq.workflow.WorkItemHandler.class
+    com.rioiam.iiq.workflow.WorkItemHandler.class,
+    com.rioiam.iiq.workflow.ServerSideWorkflowLauncher.class
     // Additional components will be added here as modules are created
 })
 public abstract class BaseIIQTest {

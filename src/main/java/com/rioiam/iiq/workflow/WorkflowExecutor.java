@@ -71,8 +71,18 @@ public class WorkflowExecutor {
                 }
             }
 
-            // Launch the workflow - use 3-parameter version: launch(workflowName, launcher, variables)
-            WorkflowLaunch launch = workflower.launch(workflowName, launcher, variables);
+            // Create WorkflowLaunch object for proper configuration
+            WorkflowLaunch wfLaunch = new WorkflowLaunch();
+            wfLaunch.setWorkflowName(workflowName);
+            wfLaunch.setWorkflowRef(workflowName);
+            wfLaunch.setCaseName(launcher); // Use launcher name as case name
+            wfLaunch.setVariables(variables);
+
+            logger.info("Launching workflow with WorkflowLaunch object...");
+            logger.info("  Using WorkflowLaunch for proper WorkItem creation");
+
+            // Launch the workflow using WorkflowLaunch object
+            WorkflowLaunch launch = workflower.launch(wfLaunch);
 
             if (launch != null) {
                 WorkflowCase wfCase = launch.getWorkflowCase();

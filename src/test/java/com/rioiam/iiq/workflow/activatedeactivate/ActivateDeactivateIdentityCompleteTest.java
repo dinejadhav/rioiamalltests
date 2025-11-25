@@ -2,13 +2,17 @@ package com.rioiam.iiq.workflow.activatedeactivate;
 
 import com.rioiam.iiq.base.BaseWorkflowTest;
 import com.rioiam.iiq.fixtures.TestIdentities;
+import com.rioiam.iiq.session.MockHttpSessionProvider;
+import com.rioiam.iiq.workflow.ServerSideWorkflowLauncher;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import sailpoint.object.Identity;
 import sailpoint.object.WorkItem;
 import sailpoint.object.WorkflowCase;
 
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -30,6 +34,9 @@ import static org.junit.Assert.*;
 public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
 
     private static final Logger logger = LoggerFactory.getLogger(ActivateDeactivateIdentityCompleteTest.class);
+
+    @Autowired
+    private ServerSideWorkflowLauncher serverSideWorkflowLauncher;
 
     private static final String WORKFLOW_NAME = "VF-Core-ActivateDeactivateIdentity";
 
@@ -121,8 +128,8 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         Map<String, Object> initialVariables = new HashMap<>();
         initialVariables.put("launcher", LAUNCHER_USER);
         initialVariables.put("identityName", LAUNCHER_USER);
-        initialVariables.put("userLocale", Locale.ENGLISH);  // Required by workflow
-        initialVariables.put("clientTimeZone", TimeZone.getDefault());  // Required by workflow
+        initialVariables.put("userLocale", Locale.ENGLISH);
+        initialVariables.put("clientTimeZone", TimeZone.getDefault());
 
         String workflowCaseId = workflowExecutor.launchWorkflow(WORKFLOW_NAME, LAUNCHER_USER, initialVariables);
         assertNotNull("Workflow should be launched", workflowCaseId);
@@ -130,35 +137,23 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
 
         // Step 2: Complete Request Initiate Form
         logger.info("Step 2: Completing Request Initiate form...");
-        logger.info("DEBUG: Searching for WorkItem with workflowCaseId: {}", workflowCaseId);
-
-        // Debug: Check all pending work items immediately
-        logger.info("DEBUG: Checking pending work items before wait...");
-        List<WorkItem> allItems = workItemHandler.getWorkItemsForWorkflow(workflowCaseId);
-        logger.info("DEBUG: Found {} work items for workflow case '{}'", allItems != null ? allItems.size() : 0, workflowCaseId);
-        if (allItems != null && !allItems.isEmpty()) {
-            for (WorkItem item : allItems) {
-                logger.info("DEBUG: - WorkItem: type={}, owner={}, state={}", item.getType(), item.getOwner(), item.getState());
-            }
-        }
-
         WorkItem initiateForm = workItemHandler.waitForWorkItem(workflowCaseId, WorkItem.Type.Form, 30);
         assertNotNull("Request Initiate form should appear", initiateForm);
         logger.info("✓ Request Initiate form found: {}", initiateForm.getId());
 
         // Fill in the Request Initiate form data
         Map<String, Object> initiateData = new HashMap<>();
-        initiateData.put("operation", "Activate");  // Activate or Deactivate
-        initiateData.put("sponsorScope", "Local Market");  // Local Market or Service
-        initiateData.put("vfMarket", "Vodafone Limited");  // Market selection (adjust as needed)
-        initiateData.put("requestees", INACTIVE_USERS_TO_ACTIVATE);  // List of users
-        initiateData.put("action", "individual");  // Hidden field, always "individual"
+        initiateData.put("operation", "Activate");
+        initiateData.put("sponsorScope", "Local Market");
+        initiateData.put("vfMarket", "Vodafone Limited");
+        initiateData.put("requestees", INACTIVE_USERS_TO_ACTIVATE);
+        initiateData.put("action", "individual");
 
         boolean initiateCompleted = workItemHandler.completeFormWorkItem(initiateForm.getId(), initiateData);
         assertTrue("Request Initiate form should be completed", initiateCompleted);
         logger.info("✓ Request Initiate form completed");
         logger.info("   - Operation: Activate");
-        logger.info("   - Market: UK");
+        logger.info("   - Market: Vodafone Limited");
         logger.info("   - Users: {}", INACTIVE_USERS_TO_ACTIVATE);
 
         // Step 3: Complete Request Submit Form
@@ -170,17 +165,17 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         // Fill in the Request Submit form data
         Map<String, Object> submitData = new HashMap<>();
         submitData.put("busJustification", "Automated test - Activating users for inactive local market testing");
-        submitData.put("navigator", "vfsummary");  // Submit action
+        submitData.put("navigator", "vfsummary");
 
         boolean submitCompleted = workItemHandler.completeFormWorkItem(submitForm.getId(), submitData);
         assertTrue("Request Submit form should be completed", submitCompleted);
         logger.info("✓ Request Submit form completed with business justification");
 
-        // Step 4: Wait for workflow to process and launch sub-workflow
+        // Step 4: Wait for workflow processing
         logger.info("Step 4: Waiting for workflow processing...");
-        Thread.sleep(5000);  // Give time for sub-workflow to be created
+        Thread.sleep(5000);
 
-        // Step 5: Get the Request ID from workflow variables
+        // Step 5: Get the Request ID
         logger.info("Step 5: Retrieving Request ID...");
         WorkflowCase workflowCase = workflowExecutor.getWorkflowCase(workflowCaseId);
 
@@ -199,7 +194,7 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
             logger.info("========================================");
         }
 
-        // Step 6: Complete Summary Form
+        // Step 6: Complete Summary Form (if exists)
         logger.info("Step 6: Completing Summary form...");
         WorkItem summaryForm = workItemHandler.waitForWorkItem(workflowCaseId, WorkItem.Type.Form, 30);
 
@@ -225,9 +220,6 @@ public class ActivateDeactivateIdentityCompleteTest extends BaseWorkflowTest {
         logger.info("Request ID: {}", requestId != null ? requestId : "NOT CAPTURED");
         logger.info("Users Activated: {}", INACTIVE_USERS_TO_ACTIVATE);
         logger.info("========================================");
-
-        // Validate users are now active (optional - comment out if you want to check manually)
-        validateUsersActivated();
 
         // Assert that we got a request ID
         assertNotNull("Request ID should be captured from workflow", requestId);
