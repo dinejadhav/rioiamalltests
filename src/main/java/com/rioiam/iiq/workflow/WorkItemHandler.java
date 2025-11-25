@@ -238,8 +238,21 @@ public class WorkItemHandler {
             // Trigger workflow continuation
             WorkflowCase wfCase = workItem.getWorkflowCase();
             if (wfCase != null) {
-                logger.debug("Advancing workflow case: {}", wfCase.getId());
-                // The workflow engine will pick up the completed work item and continue
+                logger.debug("Advancing workflow by processing completed WorkItem");
+                logger.debug("  WorkItem: {}", workItem.getId());
+                logger.debug("  Workflow Case: {}", wfCase.getName());
+
+                // CRITICAL: Must advance the workflow after completing WorkItem
+                // Use Workflower to process the completed WorkItem
+                try {
+                    sailpoint.api.Workflower workflower = new sailpoint.api.Workflower(context);
+                    // Process the WorkItem with owner checking enabled
+                    workflower.process(workItem, true);
+                    logger.debug("✓ WorkItem processed, workflow should advance");
+                } catch (Exception e) {
+                    logger.error("✗ Error processing WorkItem to advance workflow", e);
+                    throw new GeneralException("Failed to advance workflow", e);
+                }
             }
 
             logger.info("✓ Form work item completed successfully");

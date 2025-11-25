@@ -75,10 +75,13 @@ public class WorkflowExecutor {
             WorkflowLaunch wfLaunch = new WorkflowLaunch();
             wfLaunch.setWorkflowName(workflowName);
             wfLaunch.setWorkflowRef(workflowName);
-            wfLaunch.setCaseName(launcher); // Use launcher name as case name
+            wfLaunch.setCaseName(launcher + " - " + System.currentTimeMillis()); // Unique case name
+            wfLaunch.setLauncher(launcher); // CRITICAL: Set the launcher identity
             wfLaunch.setVariables(variables);
 
             logger.info("Launching workflow with WorkflowLaunch object...");
+            logger.info("  Case Name: {}", wfLaunch.getCaseName());
+            logger.info("  Launcher: {}", launcher);
             logger.info("  Using WorkflowLaunch for proper WorkItem creation");
 
             // Launch the workflow using WorkflowLaunch object
@@ -204,23 +207,33 @@ public class WorkflowExecutor {
     }
 
     /**
-     * Get the workflow case by ID.
+     * Get the workflow case by ID or NAME.
+     * This method tries both ID lookup and name lookup.
      *
-     * @param workflowCaseId ID of the workflow case
+     * @param workflowCaseIdOrName ID or NAME of the workflow case
      * @return WorkflowCase object, or null if not found
      */
-    public WorkflowCase getWorkflowCase(String workflowCaseId) {
-        logger.debug("Getting workflow case: {}", workflowCaseId);
+    public WorkflowCase getWorkflowCase(String workflowCaseIdOrName) {
+        logger.debug("Getting workflow case: {}", workflowCaseIdOrName);
 
         SailPointContext context = remoteContext.getContext();
 
         try {
-            WorkflowCase wfCase = context.getObjectById(WorkflowCase.class, workflowCaseId);
+            // Try by ID first
+            WorkflowCase wfCase = context.getObjectById(WorkflowCase.class, workflowCaseIdOrName);
 
             if (wfCase != null) {
-                logger.debug("✓ Workflow case found: {} (Status: {})", wfCase.getName(), wfCase.getCompletionStatus());
+                logger.debug("✓ Workflow case found by ID: {} (Status: {})", wfCase.getName(), wfCase.getCompletionStatus());
+                return wfCase;
+            }
+
+            // Try by name
+            wfCase = context.getObjectByName(WorkflowCase.class, workflowCaseIdOrName);
+
+            if (wfCase != null) {
+                logger.debug("✓ Workflow case found by NAME: {} (Status: {})", wfCase.getName(), wfCase.getCompletionStatus());
             } else {
-                logger.debug("✗ Workflow case not found: {}", workflowCaseId);
+                logger.debug("✗ Workflow case not found by ID or NAME: {}", workflowCaseIdOrName);
             }
 
             return wfCase;
