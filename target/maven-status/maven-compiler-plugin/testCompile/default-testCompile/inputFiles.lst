@@ -7,7 +7,9 @@
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateIdentityCompleteTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/base/BaseWorkflowTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CheckUserExistsTest.java
+/Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateWithTraceTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CreateDineshJadhavUserTest.java
+/Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/workflow/CheckWorkflowStatusTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/base/BaseIIQTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CreateInactiveUserForTest.java
 /Users/dineshjadhav/Sailpoint/rioiam-remote-test-framework/src/test/java/com/rioiam/iiq/identity/CreateActiveIdentityTest.java

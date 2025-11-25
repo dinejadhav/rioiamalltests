@@ -1,5 +1,6 @@
 com/rioiam/iiq/identity/CheckUserCapabilitiesTest.class
 com/rioiam/iiq/fixtures/TestConfigurations.class
+com/rioiam/iiq/workflow/activatedeactivate/ActivateDeactivateWithTraceTest.class
 com/rioiam/iiq/fixtures/TestIdentities.class
 com/rioiam/iiq/identity/IdentityServiceTest.class
 com/rioiam/iiq/workflow/CheckWorkflowStatusTest.class

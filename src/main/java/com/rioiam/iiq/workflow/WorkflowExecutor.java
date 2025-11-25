@@ -93,7 +93,17 @@ public class WorkflowExecutor {
                 if (wfCase != null) {
                     logger.info("✓ Workflow launched successfully");
                     logger.info("  Workflow Case Name: {}", wfCase.getName());
+                    logger.info("  Workflow Case ID: {}", wfCase.getId());
                     logger.info("  Initial Status: {}", wfCase.getCompletionStatus());
+
+                    // CRITICAL DEBUG: Check if workflow completed immediately or is waiting
+                    if (wfCase.getCompletionStatus() != null) {
+                        logger.warn("⚠️  Workflow completed immediately with status: {}", wfCase.getCompletionStatus());
+                        logger.warn("  This usually means workflow finished without waiting for WorkItems");
+                        logger.warn("  Workflow may have errored or taken unexpected path");
+                    } else {
+                        logger.info("  Workflow is executing (status is null - workflow running)");
+                    }
 
                     // Return the workflow case name instead of ID since ID may not be populated yet
                     // The workflow case name is unique and can be used to track the workflow
